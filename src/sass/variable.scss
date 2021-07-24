@@ -1,0 +1,58 @@
+// Colors
+
+$app_color: #072035;
+$app_pink: #DA2389;
+$app_text_color: #070708;
+$app_dark_color: #0F5E9C;
+$whitesmoke: #f5f5f5;
+$app_background: #F9F9F9;
+$app_yellow: #F49209;
+$app_green: #52C72B;
+$app_red: #FF3330;
+$light_gray: #c4c4c4;
+$gray: #A5A5A5;
+$dark_gray: #797979;
+
+$colors: (
+    app_color: $app_color,
+    app_pink: $app_pink,
+    app_text_color: $app_text_color,
+    app_dark_color: $app_dark_color,
+    app_background: $app_background,
+    app_yellow: $app_yellow,
+    app_green: $app_green,
+    app_red: $app_red,
+    light_gray: $light_gray,
+    gray: $gray,
+    dark_gray: $dark_gray,
+    white: #fff,
+    black: #000
+);
+
+// font weight
+$weight: (
+    regular: 400,
+    semibold: 500,
+    bold: 700
+);
+
+//font size
+$typography: (
+    small: 12px,
+    medium: 14px,
+    normal: 16px,
+    large: 18px,
+    xlarge: 24px,
+    xxlarge: 45px,
+    xxxlarge: 50px
+);
+
+//text align
+$textalign: (
+    left: left,
+    center: center,
+    right: right
+);
+
+//border
+
