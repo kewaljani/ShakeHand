@@ -4,7 +4,7 @@ import 'antd/dist/antd.css'
 import './index.css';
 import './sass/app.scss';
 import App from './App';
-import Layout from './MainLayout/Index';
+import Layout from './ILayout/Index';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

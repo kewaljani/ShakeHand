@@ -16,7 +16,7 @@ function FooterIndex(props) {
             </Col>
             <Col xs={24} sm={24} md={8} lg={8} xl={8} className="footer_right">
                 <span className="text_gray text_small">Designed & Developed by
-                    ShakeHand
+                    M & K
                 </span>
             </Col>
         </Row>

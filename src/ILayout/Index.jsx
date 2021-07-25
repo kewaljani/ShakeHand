@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 import { Layout, Row, Col } from 'antd';
 import AppHeader from './Header'
 import AppFooter from './Footer'
