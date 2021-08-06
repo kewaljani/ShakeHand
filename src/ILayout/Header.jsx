@@ -9,6 +9,8 @@ import { Row, Col, Menu, Avatar, Input } from 'antd';
 import { UserOutlined, MessageOutlined, BellOutlined } from '@ant-design/icons';
 import Jobs from './../Institution/Jobs'
 import Profile from './../Institution/Profile'
+import Payment from './../Institution/Payment'
+import Team from './../Institution/Team'
 
 const { SubMenu } = Menu;
 
@@ -75,7 +77,7 @@ function HeaderIndex(props) {
                                 <Profile />
                             </Route>
                             <Route path="/institute-team">
-                                <Jobs />
+                                <Team />
                             </Route>
                             <Route path="/institute-message">
                                 <Jobs />
@@ -84,7 +86,7 @@ function HeaderIndex(props) {
                                 <Jobs />
                             </Route>
                             <Route path="/institute-payment">
-                                <Jobs />
+                                <Payment />
                             </Route>
                             <Route path="/institute-acount">
                                 <Jobs />

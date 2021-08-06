@@ -1,10 +1,10 @@
 import React from 'react';
 import ILayout from './../ILayout/Index'
 
-function Jobs(props) {
+function Team(props) {
     return (
-      <div>Jobs</div>
+      <div>Team</div>
     );
 }
 
-export default Jobs;
+export default Team;

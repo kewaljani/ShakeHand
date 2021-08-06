@@ -1,10 +1,10 @@
 import React from 'react';
 import ILayout from './../ILayout/Index'
 
-function Jobs(props) {
+function Payment(props) {
     return (
-      <div>Jobs</div>
+      <div>Payment</div>
     );
 }
 
-export default Jobs;
+export default Payment;
