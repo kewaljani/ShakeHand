@@ -88,7 +88,7 @@ function Index(props) {
                     </Row>
 
                 </Header>
-                <Content className="main_layout bg_white">
+                <Content    >
                     <Row
                         type="flex"
                         justify="center"
