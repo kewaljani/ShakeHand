@@ -13,7 +13,7 @@ function Profile(props) {
   return (
     <Router >
       <Layout justify="center" align="center " >
-        <Sider style={{padding:"60px 0"}} span={10} className="bg_whitesmoke" >
+        <Sider style={{padding:"60px 0", margin: '10px 0'}} span={10} className="bg_whitesmoke" >
           <Card size="small" title="Kewal Jani">
             <Row style={{ border: 'solid' }}>
               <Image
@@ -25,7 +25,7 @@ function Profile(props) {
           </Card>
         </Sider>
         <Layout>
-          <Content style={{padding:"50px 0 0 10px",margin:'10px'}} >
+          <Content style={{padding:"50px 0 0 10px",margin:'10px 0'}} >
             
             <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} style={{padding:'10px 0 ' }}>
               <Col span={24} justify="center" align="center">
