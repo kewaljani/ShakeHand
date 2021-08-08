@@ -25,7 +25,7 @@ function Index(props) {
         setMenu(e.key);
     };
     return (
-        <Layout style={{ minWidth: "100vh" }}>
+        <Layout style={{ minWidth: "100vh" }} >
             <Router>
                 <Header
                     className="bg_white"
