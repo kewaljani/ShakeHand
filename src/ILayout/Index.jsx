@@ -104,9 +104,9 @@ function Index(props) {
                                 <Route path="/institute-team">
                                     <Team />
                                 </Route>
-                                {/* <Route path="/institute-payment">
-                                    <Payment />
-                                </Route> */}
+                                    {/* <Route path="/institute-payment">
+                                        <Payment />
+                                    </Route> */}
                                 <Route path="/institute-message">
                                     <Jobs />
                                 </Route>
