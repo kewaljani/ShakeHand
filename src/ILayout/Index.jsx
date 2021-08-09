@@ -25,7 +25,7 @@ function Index(props) {
         setMenu(e.key);
     };
     return (
-        <Layout style={{ minWidth: "100vh" }}>
+        <Layout style={{ minWidth: "100vh" }} >
             <Router>
                 <Header
                     className="bg_white"
@@ -88,7 +88,7 @@ function Index(props) {
                     </Row>
 
                 </Header>
-                <Content className="main_layout bg_white">
+                <Content className="main_layout ">
                     <Row
                         type="flex"
                         justify="center"
