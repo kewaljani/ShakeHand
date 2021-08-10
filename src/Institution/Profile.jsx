@@ -13,13 +13,13 @@ function Profile(props) {
   return (
     <Router >
 
-      
-      {/* <Row>
+      <Row>
         <Col span={8}>
         <Card size="small" title="Kewal Jani">
             <Row style={{ border: 'solid' }}>
               <Image
                 width={'100%'}
+                className='custom_profile'
                 src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
               />
             </Row>
@@ -73,7 +73,7 @@ function Profile(props) {
             </Col>
             </Row>
         </Col>
-      </Row> */}
+      </Row>
     </Router>
   );
 }
