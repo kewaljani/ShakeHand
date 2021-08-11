@@ -1,10 +1,10 @@
 import React from 'react';
 import ILayout from './../ILayout/Index'
-import JobCard from '../Components/JobDetailCard'
+import JobDetail from '../Components/JobDetailCard'
 function Jobs(props) {
   return (
     <div>
-      <JobCard />
+      <JobDetail />
     </div>
   );
 }
