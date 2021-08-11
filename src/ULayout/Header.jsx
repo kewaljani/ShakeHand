@@ -16,9 +16,9 @@ const { SubMenu } = Menu;
 
 function HeaderIndex(props) {
 
-    const [menu, setMenu] = useState('i-jobs')
+    const [menu, setMenu] = useState('user-jobs')
     const handleClick = e => {
-        // console.log('click ', e);
+        console.log('click ', e);
         setMenu(e.key);
     };
     return (
