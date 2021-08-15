@@ -1,14 +1,14 @@
 import { Form, Input, Button, Checkbox } from 'antd';
 import { Row, Col, Radio } from 'antd'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ILayout from '../ILayout/Index'
 import ULayout from '../ULayout/Index'
 
 const Demo = () => {
     const [mainLayout, setMainLayout] = useState("auth")
-
+    const [key, setKey] = useState("auth")
     const onFinish = (values) => {
-        console.log('Success:', values);
+        // console.log('Success:', values);
         localStorage.setItem("mainLayout", values.layout)
         setMainLayout(values.layout)
     };
@@ -16,12 +16,18 @@ const Demo = () => {
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
-    let K = localStorage.getItem("mainLayout")
-    console.log("K", K)
+
+    useEffect(() => {
+        let K = localStorage.getItem("mainLayout")
+        setKey(K);
+    }, [])
+
+
+
     return (
         <>
             {console.log("layout", mainLayout)}
-            {mainLayout && K === 'institution' ? <ILayout /> : mainLayout && K === 'user' ? <ULayout /> :
+            {mainLayout && key === 'institution' ? <ILayout /> : mainLayout && key === 'user' ? <ULayout /> :
                 <div className="mainlayout">
                     <Row style={{ marginTop: "10%" }}>
                         <Col offset={8} className="text_center">

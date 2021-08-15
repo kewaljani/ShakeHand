@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { Card, Col, Row, Typography } from "antd";
+import { Card, Col, Row, Avatar, Typography } from "antd";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import {
+  MailOutlined,
   EnvironmentOutlined,
-  CalendarOutlined,
-  BookOutlined,
+  GlobalOutlined,
+  UserOutlined,
   TeamOutlined,
   SolutionOutlined,
 } from "@ant-design/icons";
-import JobDetailCard from "../Components/JobDetailCard";
 
 const { Paragraph } = Typography;
 
@@ -20,11 +20,11 @@ function JobCard(props) {
           size="small"
           title={
             <Row type="flex" justify="space-between">
-              <div className="text_app_color text_large ">Job Title</div>
+              <div className="text_app_color text_large">Institute Name</div>
               <div>
                 <button type="primary" className="green_button">
                   <Link to="/institute-jobs/1" className="text_white">
-                    Expand
+                    Detail
                   </Link>
                 </button>
               </div>
@@ -32,28 +32,37 @@ function JobCard(props) {
           }
           style={{ width: "100%" }}
         >
-          <Row type="flex" justify="space-between">
-            <Col>
-              <EnvironmentOutlined className="text_pink" />
-              &nbsp; Location
+          <Row>
+            <Col span={4}>
+              <Avatar size={64} icon={<UserOutlined />} />
             </Col>
-            <Col>
-              <BookOutlined className="text_pink" />
-              &nbsp; Institite Name
+            <Col span={10}>
+              <Row type="flex" justify="space-between">
+                <Col span={24}>
+                  <MailOutlined className="text_pink" />
+                  &nbsp; shakehand@gmail.com
+                </Col>
+                <Col span={24}>
+                  <GlobalOutlined className="text_pink" />
+                  &nbsp; https//shakehand.com
+                </Col>
+                <Col span={24}>
+                  <EnvironmentOutlined className="text_pink" />
+                  &nbsp; Location(Address+Country)
+                </Col>
+              </Row>
             </Col>
-            <Col>
-              <TeamOutlined className="text_pink" />
-              &nbsp; Openings: 5
-            </Col>
-            <Col>
-              <SolutionOutlined className="text_pink" />
-              &nbsp; Full Time
-              {/* Part Time 
-                Internship */}
-            </Col>
-            <Col>
-              <CalendarOutlined className="text_pink" />
-              &nbsp; Date posted
+            <Col span={10}>
+              <Row type="flex" justify="space-between">
+                <Col span={24}>
+                  <TeamOutlined className="text_pink" />
+                  &nbsp; Institute Size: 250
+                </Col>
+                <Col span={24}>
+                  <SolutionOutlined className="text_pink" />
+                  &nbsp; Institute Type
+                </Col>
+              </Row>
             </Col>
           </Row>
           <Row type="flex" justify="space-around">

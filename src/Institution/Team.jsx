@@ -1,10 +1,12 @@
-import React from 'react';
-import ILayout from './../ILayout/Index'
+import React from "react";
+import TeamCard from "../Components/TeamCard";
 
 function Team(props) {
-    return (
-      <div>Team</div>
-    );
+  return (
+    <div>
+      <TeamCard />
+    </div>
+  );
 }
 
 export default Team;

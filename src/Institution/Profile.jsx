@@ -1,80 +1,88 @@
-import React from 'react';
-import { Card, Col, Row } from 'antd';
+import React, { useState } from "react";
+import { Card, Col, Row, Avatar, Typography } from "antd";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import { Layout } from 'antd';
-import { Image } from 'antd';
-const { Header, Footer, Sider, Content } = Layout;
+  MailOutlined,
+  EnvironmentOutlined,
+  GlobalOutlined,
+  UserOutlined,
+  TeamOutlined,
+  SolutionOutlined,
+} from "@ant-design/icons";
+
+const { Paragraph } = Typography;
+
 function Profile(props) {
   return (
-    <Router >
-
-      <Row>
-        <Col span={8}>
-        <Card size="small" title="Kewal Jani">
-            <Row style={{ border: 'solid' }}>
-              <Image
-                width={'100%'}
-                className='custom_profile'
-                src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-              />
+    <Row style={{ marginTop: "0.5em" }}>
+      <Col offset={2} xs={24} md={12} lg={20}>
+        <Card
+          size="small"
+          title={
+            <Row type="flex" justify="space-between">
+              <div className="text_app_color text_large">Institute Name</div>
+              <div>
+                <button type="primary" className="green_button">
+                  <Link to="/institute-jobs/1" className="text_white">
+                    Edite
+                  </Link>
+                </button>
+              </div>
             </Row>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
-          </Card>
-        </Col>
-        <Col offset={1} span={15}>
-        <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} >
-              <Col span={24} justify="center" align="center">
-                <Card size="small" title="About You" extra={<a href="#">More</a>} style={{width:'100%'}} >
-                  <p>Card content</p>
-                  <p>Card content</p>
-                  <p>Card content</p>
-                </Card>
+          }
+          style={{ width: "100%" }}
+        >
+          <Row>
+            <Col span={7}>
+              <Avatar size={128} icon={<UserOutlined />} />
             </Col>
-            </Row>
-            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} style={{padding:'10px 0'}}>
-              <Col span={24} justify="center" align="center">
-                <Card size="small" title="Work experience" extra={<a href="#">More</a>} style={{width:'100%'}} >
-                  <p>Card content</p>
-                  <p>Card content</p>
-                  <p>Card content</p>
-                </Card>
+            <Col span={17}>
+              <Row type="flex" justify="space-between">
+                <Col span={24}>
+                  <MailOutlined className="text_pink" />
+                  &nbsp; shakehand@gmail.com
+                </Col>
+                <Col span={24}>
+                  <GlobalOutlined className="text_pink" />
+                  &nbsp; https//shakehand.com
+                </Col>
+                <Col span={24}>
+                  <EnvironmentOutlined className="text_pink" />
+                  &nbsp; Location(Address+Country)
+                </Col>
+                <Col span={24}>
+                  <TeamOutlined className="text_pink" />
+                  &nbsp; Institute Size: 250
+                </Col>
+                <Col span={24}>
+                  <SolutionOutlined className="text_pink" />
+                  &nbsp; Institute Type
+                </Col>
+              </Row>
             </Col>
-            </Row>
-            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} style={{padding:'10px 0'}}>
-              <Col span={24} justify="center" align="center">
-                <Card size="small" title="Certificates" extra={<a href="#">More</a>} style={{width:'100%'}} >
-                  <p>Card content</p>
-                  <p>Card content</p>
-                  <p>Card content</p>
-                </Card>
+          </Row>
+          <Row type="flex" justify="space-around">
+            <Col span={24}>
+              <Paragraph
+                ellipsis={{
+                  rows: 3,
+                  expandable: true,
+                  symbol: "more",
+                }}
+                style={{ marginTop: "1em", whiteSpace: "normal" }}
+              >
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged.
+              </Paragraph>
             </Col>
-            </Row>
-            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} style={{padding:'10px 0'}}>
-              <Col span={24} justify="center" align="center">
-                <Card size="small" title="Certificates" extra={<a href="#">More</a>} style={{width:'100%'}} >
-                  <p>Card content</p>
-                  <p>Card content</p>
-                  <p>Card content</p>
-                </Card>
-            </Col>
-            </Row>
-            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} style={{padding:'10px 0'}}>
-              <Col span={24} justify="center" align="center">
-                <Card size="small" title="Certificates" extra={<a href="#">More</a>} style={{width:'100%'}} >
-                  <p>Card content</p>
-                  <p>Card content</p>
-                  <p>Card content</p>
-                </Card>
-            </Col>
-            </Row>
-        </Col>
-      </Row>
-    </Router>
+          </Row>
+        </Card>
+      </Col>
+    </Row>
   );
 }
 

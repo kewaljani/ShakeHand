@@ -4,9 +4,6 @@ import 'antd/dist/antd.css'
 import './index.css';
 import './sass/app.scss';
 import App from './App';
-import ILayout from './ILayout/Index';
-import AIndex from './AuthLayout/Index'
-// import ULayout from './ULayout/Index';
 import AuthLayout from './AuthLayout/Index';
 import reportWebVitals from './reportWebVitals';
 
