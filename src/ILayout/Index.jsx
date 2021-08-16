@@ -9,6 +9,7 @@ import Jobs from "../Institution/Jobs";
 import Profile from "../Institution/Profile";
 import Payment from "../Institution/Payment";
 import Team from "../Institution/Team";
+import JobDetailCard from "../Components/JobDetailCard";
 
 const { Content, Header, Footer } = Layout;
 const { SubMenu } = Menu;
@@ -105,6 +106,10 @@ function Index(props) {
                 <Route path="/institute-profile">
                   <Profile />
                 </Route>
+                
+                {/* <Route path="/institute-jobs/1">
+                  <JobDetailCard />
+                </Route> */}
               </Switch>
             </Col>
           </Row>

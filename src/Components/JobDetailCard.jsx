@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Col, Row } from "antd";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import {
   EnvironmentOutlined,
   CalendarOutlined,
@@ -8,9 +8,9 @@ import {
 } from "@ant-design/icons";
 
 function JobDetailCard(props) {
+  let match = useRouteMatch("/institute-jobs/1"); 
   return (
     <Row style={{ marginTop: "0.5em" }}>
-      {console.log("hello there")}
       <Card title="Job Post Name" style={{ width: "100%" }}>
         <Col>
           <Row style={{ borderBottom: "solid 1px #086972" }}>
