@@ -3,13 +3,27 @@ import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css'
 import './index.css';
 import './sass/app.scss';
+import { BrowserRouter as Router, Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import App from './App';
-import AuthLayout from './AuthLayout/Index';
+import AuthLayout from './AuthLayout/login';
+import ULayout from './ULayout/Index';
+import ILayout from './ILayout/Index';
 import reportWebVitals from './reportWebVitals';
-
 ReactDOM.render(
   <React.StrictMode>
-    <AuthLayout/>
+    <Router>
+      <Switch>
+        <Route path='/institute'>
+          <ILayout />
+        </Route>
+        <Route path='/user' >
+          <ULayout />
+        </Route>
+        <Route >
+          <AuthLayout />
+        </Route>
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

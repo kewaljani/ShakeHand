@@ -11,6 +11,7 @@ const Demo = () => {
         // console.log('Success:', values);
         localStorage.setItem("mainLayout", values.layout)
         setMainLayout(values.layout)
+        history.push("/institute")
     };
 
     const onFinishFailed = (errorInfo) => {
@@ -21,7 +22,6 @@ const Demo = () => {
         let K = localStorage.getItem("mainLayout")
         setKey(K);
     }, [])
-
 
 
     return (
