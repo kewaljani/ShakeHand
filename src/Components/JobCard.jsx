@@ -10,7 +10,7 @@ import {
 } from "@ant-design/icons";
 import JobDetailCard from "../Components/JobDetailCard";
 
-const { Paragraph } = Typography;
+const { Paragraph } = Typography; 
 
 function JobCard(props) {
   let history = useHistory();
