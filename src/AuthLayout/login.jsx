@@ -19,7 +19,7 @@ const Demo = () => {
     localStorage.setItem("mainLayout", values.layout);
     setMainLayout(values.layout);
     {
-      mainLayout === "institution"
+      mainLayout === "institute"
         ? history.push("/institute")
         : history.push("/user");
     }

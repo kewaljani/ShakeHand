@@ -1,10 +1,10 @@
-import React from 'react';
-import JobCard from '../Components/JobCard'
-import JobApplyCard from '../Components/jobApplyCard';
+import React from "react";
+import JobCard from "../Components/JobCard";
+import JobApplyCard from "../Components/jobApplyCard";
 function Jobs(props) {
   return (
     <div>
-      <JobCard />
+      <JobApplyCard />
     </div>
   );
 }
