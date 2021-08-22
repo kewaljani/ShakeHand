@@ -1,13 +1,23 @@
 import React, { useState } from "react";
-import { Layout, Row, Col, Menu, Avatar, Input } from "antd";
-import { UserOutlined, MessageOutlined, BellOutlined } from "@ant-design/icons";
+import { Layout, Row, Col, Menu, Avatar, Input, Button } from "antd";
+import {
+  UserOutlined,
+  MessageOutlined,
+  BellOutlined,
+  LogoutOutlined,
+} from "@ant-design/icons";
 // import AppHeader from './Header'
 import AppFooter from "./Footer";
-
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useHistory,
+} from "react-router-dom";
 import Jobs from "../Institution/Jobs";
 import Profile from "../Institution/Profile";
-import Payment from "../Institution/Payment";
+// import Payment from "../Institution/Payment";
 import Team from "../Institution/Team";
 import JobDetailCard from "../Components/JobDetailCard";
 
@@ -15,10 +25,15 @@ const { Content, Header, Footer } = Layout;
 const { SubMenu } = Menu;
 
 function Index(props) {
-  const [menu, setMenu] = useState("i-jobs");
+  let history = useHistory();
+  const [menu, setMenu] = useState();
   const handleClick = (e) => {
-    console.log("click ", e);
+    // console.log("click ", e);
     setMenu(e.key);
+  };
+  const onLogout = (e) => {
+    localStorage.setItem("mainLayout", "auth");
+    history.push("/");
   };
   return (
     <Layout style={{ minWidth: "100vh" }}>
@@ -34,8 +49,10 @@ function Index(props) {
         >
           <Row type="flex" justify="middle" align="space-between">
             <Col offset={1} span={3} style={{ marginTop: "-0.2em" }}>
-              {/* <img src={User} className="app_logo" /> */}
-              LOGO
+              <Link to="/institute">
+                {/* <img src={User} className="app_logo" /> */}
+                LOGO
+              </Link>
             </Col>
             <Col span={7} offset={1} className="app_menu_wrapper">
               <Input
@@ -55,29 +72,31 @@ function Index(props) {
                   selectedKeys={[menu]}
                 >
                   <Menu.Item key="i-jobs">
-                    <Link to="/institute-jobs">Jobs</Link>
+                    <Link to="/institute/jobs">Jobs</Link>
                   </Menu.Item>
-
                   <Menu.Item key="i-team">
-                    <Link to="/institute-team">Team</Link>
+                    <Link to="/institute/team">Team</Link>
                   </Menu.Item>
                   {/* <Menu.Item key="i-payment">
-                    <Link to="/institute-payment">Payment</Link>
+                    <Link to="/institute/payment">Payment</Link>
                   </Menu.Item> */}
                   <Menu.Item key="i-message">
-                    <Link to="/institute-message">
+                    <Link to="/institute/message">
                       <MessageOutlined />
                     </Link>
                   </Menu.Item>
                   <Menu.Item key="i-notification">
-                    <Link to="/institute-notification">
+                    <Link to="/institute/notification">
                       <BellOutlined />
                     </Link>
                   </Menu.Item>
                   <Menu.Item key="i-profile">
-                    <Link to="/institute-profile">
+                    <Link to="/institute/profile">
                       <Avatar size="large" icon={<UserOutlined />} size={32} />
                     </Link>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <LogoutOutlined onClick={onLogout} />
                   </Menu.Item>
                 </Menu>
               </div>
@@ -88,28 +107,28 @@ function Index(props) {
           <Row type="flex" justify="center">
             <Col lg={20} xl={20} xs={22} style={{ padding: "20px 0" }}>
               <Switch>
-                <Route path="/institute-jobs">
+                <Route path="/institute/jobs">
                   <Jobs />
                 </Route>
-                <Route path="/institute-team">
+                <Route path="/institute/team">
                   <Team />
                 </Route>
-                {/* <Route path="/institute-payment">
+                {/* <Route path="/institute/payment">
                   <Payment />
                 </Route> */}
-                <Route path="/institute-message">
+                <Route path="/institute/message">
                   <div>Message</div>
                 </Route>
-                <Route path="/institute-notification">
+                <Route path="/institute/notification">
                   <div>Notification</div>
                 </Route>
-                <Route path="/institute-profile">
+                <Route path="/institute/profile">
                   <Profile />
                 </Route>
-                
-                {/* <Route path="/institute-jobs/1">
+                <Route path="/institute">Institute Home</Route>
+                <Route path="/institute/jobs/detail">
                   <JobDetailCard />
-                </Route> */}
+                </Route>
               </Switch>
             </Col>
           </Row>

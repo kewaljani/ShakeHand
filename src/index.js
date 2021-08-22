@@ -13,10 +13,10 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        <Route path='/institute'>
+        <Route exact path='/institute'>
           <ILayout />
         </Route>
-        <Route path='/user' >
+        <Route exact path='/user' >
           <ULayout />
         </Route>
         <Route >

@@ -53,23 +53,23 @@ function Index(props) {
                   selectedKeys={[menu]}
                 >
                   <Menu.Item key="u-jobs">
-                    <Link to="/user-jobs">Jobs</Link>
+                    <Link to="/user/jobs">Jobs</Link>
                   </Menu.Item>
                   <Menu.Item key="u-institute">
-                    <Link to="/user-institute">Institute</Link>
+                    <Link to="/user/institute">Institute</Link>
                   </Menu.Item>
                   <Menu.Item key="u-message">
-                    <Link to="/user-message">
+                    <Link to="/user/message">
                       <MessageOutlined />
                     </Link>
                   </Menu.Item>
                   <Menu.Item key="u-notification">
-                    <Link to="/user-notification">
+                    <Link to="/user/notification">
                       <BellOutlined />
                     </Link>
                   </Menu.Item>
                   <Menu.Item key="u-profile">
-                    <Link to="/user-profile">
+                    <Link to="/user/profile">
                       <Avatar size="large" icon={<UserOutlined />}  size={32}/>
                     </Link>
                   </Menu.Item>
@@ -82,19 +82,19 @@ function Index(props) {
           <Row type="flex" justify="center">
             <Col lg={20} xl={20} xs={22} style={{ padding: "20px 0" }}>
               <Switch>
-                <Route path="/user-jobs">
+                <Route path="/user/jobs">
                   <Jobs />
                 </Route>
-                <Route path="/user-institute">
+                <Route path="/user/institute">
                   <Institute />
                 </Route>
-                <Route path="/user-message">
+                <Route path="/user/message">
                   <div>Message</div>
                 </Route>
-                <Route path="/user-notification">
+                <Route path="/user/notification">
                   <div>Notification</div>
                 </Route>
-                <Route path="/user-profile">
+                <Route path="/user/profile">
                   <Profile />
                 </Route>
               </Switch>

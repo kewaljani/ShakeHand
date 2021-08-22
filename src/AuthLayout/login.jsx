@@ -15,13 +15,11 @@ const Demo = () => {
   const [mainLayout, setMainLayout] = useState("auth");
   const [key, setKey] = useState("auth");
   const onFinish = (values) => {
-    // console.log('Success:', values);
+    console.log("key:", key);
     localStorage.setItem("mainLayout", values.layout);
     setMainLayout(values.layout);
     {
-      mainLayout === "institute"
-        ? history.push("/institute")
-        : history.push("/user");
+      key === "institute" ? history.push("/institute") : history.push("/user");
     }
   };
 
