@@ -81,7 +81,9 @@ function InstituteEditeProfile(props) {
             <Form.Item name={["user", "about"]} label="About You">
               <Input.TextArea />
             </Form.Item>
-            <Form.Item  style={{ display: "flex", justifyContent: "end", float:"right"}}>
+            <Form.Item
+              style={{ display: "flex", justifyContent: "end", float: "right" }}
+            >
               <Button type="primary" htmlType="submit" className="green_button">
                 Submit
               </Button>
