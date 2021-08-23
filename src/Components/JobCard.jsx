@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card, Col, Row, Typography } from "antd";
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
   useHistory,
 } from "react-router-dom";
 import {
@@ -31,7 +28,7 @@ function JobCard(props) {
   return (
     <div>
       <Router>
-        <Row style={{ marginBottom: "1em", display: "flex", justifyContent: "center" }}>
+        <Row style={{ marginBottom: "0.5em", display: "flex", justifyContent: "center" }}>
           <Col xs={24}>
             <Card
               size="small"

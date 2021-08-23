@@ -1,11 +1,16 @@
 import React from "react";
 import { Col, Row } from "antd";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import InstituteProfile from "../Components/InstituteProfile";
 import InstituteEditeProfile from "../Components/InstituteEditeProfile";
 import JobCard from "../Components/JobCard";
 
 function Profile(props) {
+  let history = useHistory();
+
+  function handleExpand() {
+    history.push("/institute/jobs/add");
+  }
   return (
     <Switch>
       <Route path="/institute/profile/edite">
@@ -17,6 +22,25 @@ function Profile(props) {
             <InstituteProfile edite={"edite"} />
           </Col>
           <Col xs={24} md={18} lg={18}>
+            <Row
+              className="bg_white"
+              type="flex"
+              justify="space-between"
+              style={{ padding: "1em", marginBottom: "0.5em" }}
+            >
+              <div className="text_app_color text_large text_semibold">
+                Click Here to add new job profile
+              </div>
+              <div>
+                <button
+                  type="primary"
+                  className="green_button"
+                  onClick={handleExpand}
+                >
+                  Add
+                </button>
+              </div>
+            </Row>
             <JobCard layout={"institute"} />
             <JobCard layout={"institute"} />
           </Col>

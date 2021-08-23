@@ -1,8 +1,19 @@
-import React, { useState } from "react";
-import { Card, Col, Row, Form, Input, Button } from "antd";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React from "react";
+import {
+  Card,
+  Col,
+  Row,
+  Form,
+  Input,
+  InputNumber,
+  Button,
+  Select,
+  DatePicker,
+} from "antd";
 
-function InstituteEditeProfile(props) {
+const { Option } = Select;
+
+function AddJob(props) {
   const onFinish = (values) => {
     console.log(values);
   };
@@ -23,11 +34,8 @@ function InstituteEditeProfile(props) {
       <Col xs={24} md={16} lg={14}>
         <Card
           title={
-            <div
-              style={{ display: "flex", justifyContent: "center" }}
-              className="text_large text_semibold"
-            >
-              Edite Institute Profile
+            <div style={{ display: "flex", justifyContent: "center" }} className="text_large text_semibold">
+              Add Job
             </div>
           }
         >
@@ -51,43 +59,52 @@ function InstituteEditeProfile(props) {
               <Input />
             </Form.Item>
             <Form.Item
-              name={["user", "email"]}
-              label="Email"
+              name={["user", "type"]}
+              label="Job Type"
               rules={[
                 {
                   required: true,
-                  type: "email",
                 },
               ]}
             >
-              <Input />
+              <Select
+                placeholder="Select a option and change input text above"
+                allowClear
+              >
+                <Option value="full_time ">Full Time</Option>
+                <Option value="part_time">Part Time</Option>
+                <Option value="internship">Internship</Option>
+              </Select>
             </Form.Item>
             <Form.Item
-              name={["user", "phone_number"]}
-              label="Phone No."
+              name={["user", "opening_no"]}
+              label="No of Opening"
               rules={[
                 {
                   required: true,
+                  type: "number",
+                  min: 0,
+                  max: 99,
                 },
               ]}
             >
-              <Input />
+              <InputNumber style={{ width: "100%" }} />
             </Form.Item>
             <Form.Item
-              name={["user", "phone_number"]}
-              label="Address"
+              name={["user", "deadline"]}
+              label="Last Date of Job"
               rules={[
                 {
                   required: true,
                 },
               ]}
             >
-              <Input />
+              <DatePicker style={{ width: "100%" }} />
             </Form.Item>
-            <Form.Item name={["user", "website"]} label="Website">
-              <Input />
+            <Form.Item name={["user", "salary"]} label="Salary">
+              <InputNumber style={{ width: "100%" }} />
             </Form.Item>
-            <Form.Item name={["user", "about"]} label="About You">
+            <Form.Item name={["user", "about"]} label="About Job">
               <Input.TextArea />
             </Form.Item>
             <Form.Item
@@ -104,4 +121,4 @@ function InstituteEditeProfile(props) {
   );
 }
 
-export default InstituteEditeProfile;
+export default AddJob;
