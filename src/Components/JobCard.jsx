@@ -31,8 +31,8 @@ function JobCard(props) {
   return (
     <div>
       <Router>
-        <Row style={{ marginTop: "0.5em" }}>
-          <Col offset={2} xs={24} md={12} lg={20}>
+        <Row style={{ marginBottom: "1em", display: "flex", justifyContent: "center" }}>
+          <Col xs={24}>
             <Card
               size="small"
               title={

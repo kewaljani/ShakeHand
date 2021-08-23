@@ -15,7 +15,7 @@ const { Paragraph } = Typography;
 
 function InstituteProfile(props) {
   return (
-    <Row style={{ marginTop: "0.5em" }}>
+    <Row gutter={[16, 0]} style={{ marginTop: "0.5em" }}>
       <Col xs={24} md={6} lg={6}>
         <Card
           size="small"
@@ -80,7 +80,8 @@ function InstituteProfile(props) {
         </Card>
       </Col>
       <Col xs={24} md={18} lg={18}>
-        <JobCard />
+        <JobCard layout={"institute"} />
+        <JobCard layout={"institute"} />
       </Col>
     </Row>
   );
