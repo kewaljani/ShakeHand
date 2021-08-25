@@ -10,14 +10,21 @@ import {
 function TeamCard(props) {
   return (
     <>
-      <Row style={{ marginTop: "0.5em" }}>
-        <Col offset={2} xs={24} md={12} lg={20}>
+      <Row
+        style={{
+          marginBottom: "0.5em",
+          display: "flex",
+          justifyContent: "center",
+        }}
+        gutter={[16, 16]}
+      >
+        <Col xs={24} md={12} lg={12}>
           <Card size="small" style={{ width: "100%" }}>
-            <Row>
-              <Col span={4}>
+            <Row gutter={[16, 16]}>
+              <Col xs={24} md={4} lg={4}>
                 <Avatar size={64} icon={<UserOutlined />} />
               </Col>
-              <Col span={20}>
+              <Col xs={24} md={20} lg={20}>
                 <Row type="flex" justify="space-between">
                   <Col>
                     <div>
@@ -45,15 +52,13 @@ function TeamCard(props) {
             </Row>
           </Card>
         </Col>
-      </Row>
-      <Row style={{ marginTop: "0.5em" }}>
-        <Col offset={2} xs={24} md={12} lg={20}>
+        <Col xs={24} md={12} lg={12}>
           <Card size="small" style={{ width: "100%" }}>
-            <Row>
-              <Col span={4}>
+            <Row gutter={[16, 16]}>
+              <Col xs={24} md={4} lg={4}>
                 <Avatar size={64} icon={<UserOutlined />} />
               </Col>
-              <Col span={20}>
+              <Col xs={24} md={20} lg={20}>
                 <Row type="flex" justify="space-between">
                   <Col>
                     <div>
