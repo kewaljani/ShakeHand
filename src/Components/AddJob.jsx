@@ -83,7 +83,7 @@ function AddJob(props) {
                 {
                   required: true,
                   type: "number",
-                  min: 0,
+                  min: 1,
                   max: 99,
                 },
               ]}
