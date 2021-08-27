@@ -114,9 +114,17 @@ function AddJob(props) {
                 Submit
               </Button>
             </Form.Item>
+            <Form.Item
+              style={{ display: "flex", justifyContent: "end", float: "right" }}
+            >
+              <Button type="primary" htmlType="submit" className="green_button">
+                Submit
+              </Button>
+            </Form.Item>
           </Form>
         </Card>
       </Col>
+      
     </Row>
   );
 }
