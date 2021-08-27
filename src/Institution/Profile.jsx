@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row } from "antd";
 import { Switch, Route, useHistory } from "react-router-dom";
 import InstituteProfile from "../Components/InstituteProfile";
-import InstituteeditProfile from "../Components/InstituteeditProfile";
+import InstituteEditeProfile from "../Components/InstituteEditeProfile";
 import JobCard from "../Components/JobCard";
 
 function Profile(props) {
@@ -14,7 +14,7 @@ function Profile(props) {
   return (
     <Switch>
       <Route path="/institute/profile/edit">
-        <InstituteeditProfile />
+        <InstituteEditeProfile />
       </Route>
       <Route path="/institute/profile">
         <Row gutter={[16, 0]} style={{ marginTop: "0.5em" }}>

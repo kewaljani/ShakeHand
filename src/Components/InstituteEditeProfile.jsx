@@ -13,7 +13,7 @@ import {
 } from "antd";
 import { LoadingOutlined, PlusOutlined, UserOutlined } from "@ant-design/icons";
 
-function InstituteeditProfile(props) {
+function InstituteEditeProfile(props) {
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState(false);
   const onFinish = (values) => {
@@ -187,4 +187,4 @@ function InstituteeditProfile(props) {
   );
 }
 
-export default InstituteeditProfile;
+export default InstituteEditeProfile;
