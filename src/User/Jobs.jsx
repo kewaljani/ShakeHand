@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import JobCard from "../Components/JobCard";
+import UserJobsPage from "../Components/UserJobsPage";
 import JobApplyCard from "../Components/JobApplyCard";
 
 function Jobs(props) {
@@ -10,7 +10,7 @@ function Jobs(props) {
         <JobApplyCard />
       </Route>
       <Route path="/user/jobs">
-        <JobCard layout={"user"} />
+        <UserJobsPage />
       </Route>
     </Switch>
   );

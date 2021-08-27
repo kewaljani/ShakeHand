@@ -37,3 +37,10 @@
 .green_button:hover {
   background-color: $dark_green;
 }
+
+.custom_upload {
+  .ant-form-item .ant-upload {
+    padding: 10px !important;
+    color: white !important;
+  }
+}

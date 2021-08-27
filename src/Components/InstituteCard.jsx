@@ -26,7 +26,7 @@ function JobCard(props) {
           justifyContent: "center",
         }}
       >
-        <Col xs={24} md={12} lg={20}>
+        <Col xs={24}>
           <Card
             size="small"
             title={

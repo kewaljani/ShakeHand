@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row } from "antd";
 import { Switch, Route } from "react-router-dom";
 import JobCard from "../Components/JobCard";
-import InstituteCard from "../Components/InstituteCard";
+import UserInstituepage from "../Components/UserInstituepage";
 import InstituteProfile from "../Components/InstituteProfile";
 
 function Institute() {
@@ -20,7 +20,7 @@ function Institute() {
         </Row>
       </Route>
       <Route path="/user/institute">
-        <InstituteCard />
+        <UserInstituepage />
       </Route>
     </Switch>
   );

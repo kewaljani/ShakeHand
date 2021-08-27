@@ -1,6 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import JobCard from "../Components/JobCard";
+import { Switch, Route } from "react-router-dom";
+import InstituteJobsPage from "../Components/InstituteJobsPage";
 import JobDetailCard from "../Components/JobDetailCard";
 import AddJob from "../Components/AddJob";
 
@@ -14,7 +14,7 @@ function Jobs(props) {
         <JobDetailCard />
       </Route>
       <Route path="/institute/jobs">
-        <JobCard layout={"institute"} />
+        <InstituteJobsPage />
       </Route>
     </Switch>
   );

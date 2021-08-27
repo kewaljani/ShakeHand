@@ -54,16 +54,6 @@ function Index(props) {
                 LOGO
               </Link>
             </Col>
-            <Col span={7} offset={1} className="app_menu_wrapper">
-              <Input
-                placeholder="Search here"
-                size="small"
-                className="header_search"
-                suffix={
-                  <i className="icon-search text_app_color text_normal" />
-                }
-              />
-            </Col>
             <Col pull={1} className="app_menu_wrapper">
               <div className="app_menu">
                 <Menu

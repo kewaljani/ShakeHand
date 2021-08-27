@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Col, Row, Avatar, Typography } from "antd";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   MailOutlined,
   EnvironmentOutlined,
@@ -13,7 +13,7 @@ import {
 const { Paragraph } = Typography;
 
 function InstituteProfile(props) {
-  const { edite } = props;
+  const { edit } = props;
   return (
     <Card
       size="small"
@@ -21,10 +21,10 @@ function InstituteProfile(props) {
         <Row type="flex" justify="space-between">
           <div className="text_app_color text_large">Institute Name</div>
           <div>
-            {edite === "edite" && (
+            {edit === "edit" && (
               <button type="primary" className="green_button">
-                <Link to="/institute/profile/edite" className="text_white">
-                  Edite
+                <Link to="/institute/profile/edit" className="text_white">
+                  Edit
                 </Link>
               </button>
             )}

@@ -1,9 +1,19 @@
 import React, { useState } from "react";
-import { Card, Col, Row, Form, Input, Button, Upload, message } from "antd";
-import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  Card,
+  Col,
+  Row,
+  Form,
+  Input,
+  Button,
+  Upload,
+  message,
+  InputNumber,
+  Avatar,
+} from "antd";
+import { LoadingOutlined, PlusOutlined, UserOutlined } from "@ant-design/icons";
 
-function InstituteEditeProfile(props) {
+function InstituteeditProfile(props) {
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState(false);
   const onFinish = (values) => {
@@ -52,7 +62,7 @@ function InstituteEditeProfile(props) {
     required: "${label} is required!",
     types: {
       email: "${label} is not a valid email!",
-      number: "${label} is not a valid number!",
+      number: "${label} is not a number!",
     },
     number: {
       range: "${label} must be between ${min} and ${max}",
@@ -69,7 +79,7 @@ function InstituteEditeProfile(props) {
               style={{ display: "flex", justifyContent: "center" }}
               className="text_large text_semibold"
             >
-              Edite Institute Profile
+              Edit Institute Profile
             </div>
           }
         >
@@ -110,13 +120,14 @@ function InstituteEditeProfile(props) {
               rules={[
                 {
                   required: true,
+                  type: "number",
                 },
               ]}
             >
-              <Input />
+              <InputNumber style={{ width: "100%" }} />
             </Form.Item>
             <Form.Item
-              name={["user", "phone_number"]}
+              name={["user", "address"]}
               label="Address"
               rules={[
                 {
@@ -133,21 +144,34 @@ function InstituteEditeProfile(props) {
               <Input.TextArea />
             </Form.Item>
             <Form.Item name={["user", "logo"]} label="Profile Picture">
-              <Upload
-                name="avatar"
-                listType="picture-card"
-                className="avatar-uploader"
-                showUploadList={false}
-                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                beforeUpload={beforeUpload}
-                onChange={handleChange}
-              >
-                {imageUrl ? (
-                  <img src={imageUrl} alt="avatar" style={{ width: "100%" }} />
-                ) : (
-                  uploadButton
-                )}
-              </Upload>
+              <Row gutter={[16,16]}>
+                <Col>
+                  {imageUrl ? (
+                    <img
+                      src={imageUrl}
+                      alt="avatar"
+                      style={{ width: "100%" }}
+                    />
+                  ) : (
+                    <Avatar size={128} icon={<UserOutlined />} />
+                  )}
+                </Col>
+                <Col style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                  <div style={{ marginTop: "1em" }} className="custom_upload">
+                    <Upload
+                      // name="avatar"
+                      // listType="picture-card"
+                      className="green_button text_white"
+                      showUploadList={false}
+                      action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                      beforeUpload={beforeUpload}
+                      onChange={handleChange}
+                    >
+                      Change Picture
+                    </Upload>
+                  </div>
+                </Col>
+              </Row>
             </Form.Item>
             <Form.Item
               style={{ display: "flex", justifyContent: "end", float: "right" }}
@@ -163,4 +187,4 @@ function InstituteEditeProfile(props) {
   );
 }
 
-export default InstituteEditeProfile;
+export default InstituteeditProfile;
