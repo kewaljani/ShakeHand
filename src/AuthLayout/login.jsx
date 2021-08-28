@@ -1,14 +1,12 @@
-import { Form, Input, Button, Checkbox } from "antd";
-import { Row, Col, Radio } from "antd";
 import React, { useState, useEffect } from "react";
+import { Row, Col, Radio, Form, Input, Button, Checkbox, Card } from "antd";
+import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import {
   BrowserRouter as Router,
   Route,
-  Redirect,
   useHistory,
+  Link,
 } from "react-router-dom";
-import ILayout from "../ILayout/Index";
-import ULayout from "../ULayout/Index";
 
 const Demo = () => {
   let history = useHistory();
@@ -35,37 +33,53 @@ const Demo = () => {
   return (
     <Router>
       <Route exact path="/">
-        {/* {console.log("layout", mainLayout)} */}
-        {/* {mainLayout && key === "institution" ? (
+        <Row
+          gutter={[16, 16]}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100vw",
+            height: "100vh",
+          }}
+          className="bg_whitesmoke"
+        >
+          <Col xs={24} md={8} lg={6}>
+            {/* {console.log("layout", mainLayout)} */}
+            {/* {mainLayout && key === "institution" ? (
           <ILayout />
         ) : mainLayout && key === "user" ? (
           <ULayout />
         ) : ( */}
-        <div className="mainlayout">
-          <Row style={{ marginTop: "10%" }}>
-            <Col offset={8} className="text_center">
+            <Card
+              title={
+                <div
+                  style={{ display: "flex", justifyContent: "center" }}
+                  className="text_xlarge text_semibold"
+                >
+                  Log In
+                </div>
+              }
+              bordered={false}
+            >
               <Form
                 name="basic"
-                labelCol={{
-                  span: 8,
-                }}
-                wrapperCol={{
-                  span: 16,
-                }}
                 initialValues={{
                   remember: true,
                 }}
                 onFinish={onFinish}
                 onFinishFailed={onFinishFailed}
               >
-                <Form.Item label="Signin As" name="layout">
+                <Form.Item
+                  label={<div className="text_semibold">Log In As</div>}
+                  name="layout"
+                >
                   <Radio.Group value={mainLayout}>
                     <Radio value="institution">Institution</Radio>
                     <Radio value="user">User</Radio>
                   </Radio.Group>
                 </Form.Item>
                 <Form.Item
-                  label="Username"
                   name="username"
                   rules={[
                     {
@@ -74,11 +88,13 @@ const Demo = () => {
                     },
                   ]}
                 >
-                  <Input />
+                  <Input
+                    prefix={<UserOutlined className="site-form-item-icon" />}
+                    placeholder="Username"
+                  />
                 </Form.Item>
 
                 <Form.Item
-                  label="Password"
                   name="password"
                   rules={[
                     {
@@ -87,35 +103,52 @@ const Demo = () => {
                     },
                   ]}
                 >
-                  <Input.Password />
+                  <Input.Password
+                    prefix={<LockOutlined className="site-form-item-icon" />}
+                    type="password"
+                    placeholder="Password"
+                  />
                 </Form.Item>
 
-                <Form.Item
-                  name="remember"
-                  valuePropName="checked"
-                  wrapperCol={{
-                    offset: 8,
-                    span: 16,
-                  }}
-                >
-                  <Checkbox>Remember me</Checkbox>
+                <Form.Item>
+                  <Row
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    <Col>
+                      <Form.Item
+                        name="remember"
+                        valuePropName="checked"
+                        noStyle
+                      >
+                        <Checkbox>Remember me</Checkbox>
+                      </Form.Item>
+                    </Col>
+                    <Col>
+                      <Link className="login-form-forgot" to="">
+                        Forgot password
+                      </Link>
+                    </Col>
+                  </Row>
                 </Form.Item>
 
-                <Form.Item
-                  wrapperCol={{
-                    offset: 8,
-                    span: 16,
-                  }}
-                >
-                  <Button type="primary" htmlType="submit">
-                    Submit
+                <Form.Item>
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    className="green_button"
+                    style={{ width: "100%" }}
+                  >
+                    Log in
                   </Button>
+                  <div style={{ marginTop: "1em" }}>
+                    Or <Link to="">register now!</Link>
+                  </div>
                 </Form.Item>
               </Form>
-            </Col>
-          </Row>
-        </div>
-        {/* )} */}
+            </Card>
+            {/* )} */}
+          </Col>
+        </Row>
       </Route>
     </Router>
   );
