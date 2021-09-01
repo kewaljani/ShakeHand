@@ -1,81 +1,81 @@
 import React from "react";
-import { Card, Col, Row } from "antd";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Layout } from "antd";
-import { Image } from "antd";
-const { Header, Footer, Sider, Content } = Layout;
+import { Col, Row } from "antd";
+import { Switch, Route, useHistory } from "react-router-dom";
+import UserProfile from "../Components/UserProfile";
+import UserEditProfile from "../Components/UserEditProfile";
+import UserInfoCard from "../Components/UserInfoCard";
+
 function Profile(props) {
+  let history = useHistory();
+
+  function handleExpand() {
+    history.push("/user/jobs/add");
+  }
+
   return (
-    <Router>
-      <Row>
-        <Col span={8}>
-          <Card size="small" title="Kewal Jani">
-            <Row style={{ border: "solid" }}>
-              <Image
-                width={"100%"}
-                className="custom_profile"
-                src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-              />
-            </Row>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book
-          </Card>
+    <Switch>
+      <Route path="/user/profile/edit">
+         <UserEditProfile />
+      </Route>
+      <Route path="/user/profile/details/edit">
+      </Route>
+      <Route>
+      <Row gutter={[16, 0]} style={{ marginTop: "0.5em" }}>
+        <Col xs={24} md={6} lg={6}>
+            <UserProfile edit={"edit"} />
         </Col>
-        <Col offset={1} span={15}>
-          <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-            <Col span={24} justify="center" align="center">
-              <Card
-                size="small"
-                title="About You"
-                extra={<a href="#">More</a>}
-                style={{ width: "100%" }}
-              >
-                <p>Card content</p>
-                <p>Card content</p>
-                <p>Card content</p>
-              </Card>
-            </Col>
-          </Row>
-          <Row
-            gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
-            style={{ padding: "10px 0" }}
-          >
-            <Col span={24} justify="center" align="center">
-              <Card
-                size="small"
-                title="Work experience"
-                extra={<a href="#">More</a>}
-                style={{ width: "100%" }}
-              >
-                <p>Card content</p>
-                <p>Card content</p>
-                <p>Card content</p>
-              </Card>
-            </Col>
-          </Row>
-          <Row
-            gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
-            style={{ padding: "10px 0" }}
-          >
-            <Col span={24} justify="center" align="center">
-              <Card
-                size="small"
-                title="Certificates"
-                extra={<a href="#">More</a>}
-                style={{ width: "100%" }}
-              >
-                <p>Card content</p>
-                <p>Card content</p>
-                <p>Card content</p>
-              </Card>
-            </Col>
-          </Row>
+        <Col xs={24} md={18} lg={18}>
+        
+            {/* <UserInfoCard layout={"hello"} /> */}
+            {/* <UserInfoCard layout={"institute"} /> */}
+          <UserInfoCard title={"About You"}/>
+          <UserInfoCard title={'Work Experience'}/>
+          <UserInfoCard title={'Projects'}/>
+           <UserInfoCard title={'Certificates'}/>
         </Col>
       </Row>
-    </Router>
+      </Route>
+    </Switch>
+
+
   );
+  // return (
+  //   <Switch>
+  //     <Route path="/User/profile/edit">
+  //       <InstituteEditeProfile />
+  //     </Route>
+  //     <Route path="/institute/profile">
+  //       <Row gutter={[16, 0]} style={{ marginTop: "0.5em" }}>
+  //         <Col xs={24} md={6} lg={6}>
+  //           <InstituteProfile edit={"edit"} />
+  //         </Col>
+  //         <Col xs={24} md={18} lg={18}>
+  //           <Row
+  //             className="bg_white"
+  //             type="flex"
+  //             justify="space-between"
+  //             style={{ padding: "1em", marginBottom: "0.5em" }}
+  //           >
+  //             <div className="text_app_color text_large text_semibold">
+  //               Click Here to add new job profile
+  //             </div>
+  //             <div>
+  //               <button
+  //                 type="primary"
+  //                 className="green_button"
+  //                 onClick={handleExpand}
+  //               >
+  //                 Add
+  //               </button>
+  //             </div>
+  //           </Row>
+  //           <JobCard layout={"institute"} />
+  //           <JobCard layout={"institute"} />
+  //         </Col>
+  //       </Row>
+  //     </Route>
+  //   </Switch>
+  // );
 }
 
 export default Profile;
